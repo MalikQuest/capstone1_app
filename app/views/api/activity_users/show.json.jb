@@ -1,0 +1,5 @@
+{
+  id: @activityuser.id,
+  activity_id: @activityuser.activity_id,
+  user_id: @activityuser.user_id,
+}

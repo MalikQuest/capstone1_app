@@ -1,0 +1,7 @@
+{
+  id: @challenge.id,
+  description: @challenge.description,
+  user_id: @challenge.user_id,
+  activity_id: @challenge.activity_id,
+  event_id: @challenge.event_id,
+}

@@ -1,0 +1,12 @@
+@challenges.map do |challenges|
+  {
+    id: challenges.id,
+    description: challenges.description,
+    user_id: challenges.user_id,
+    activity_id: challenges.activity_id,
+    event_id: challenges.event_id,
+    level: challenges.level,
+    amout: challenges.amount,
+    deadline: challenges.deadline,
+  }
+end

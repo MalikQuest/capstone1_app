@@ -1,0 +1,9 @@
+@activityusers.map do |activity|
+  {
+    id: activity.id,
+    activity_id: activity.activity_id,
+    user_id: activity.user_id,
+    description: activity.description_id,
+    status: activity.statud_id,
+  }
+end

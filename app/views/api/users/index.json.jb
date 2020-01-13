@@ -1,0 +1,11 @@
+@users.map do |user|
+  {
+    id: user.id,
+    name: user.name,
+    email: user.email,
+    height: user.height,
+    weight: user.weight,
+    age: user.age,
+    challenge: user.challenge,
+  }
+end
