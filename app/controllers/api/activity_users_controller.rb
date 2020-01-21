@@ -5,14 +5,18 @@ class Api::ActivityUsersController < ApplicationController
   end
 
   def create
-    @activityuser = ActivityUser.find_or_initialize_by(
-      activity_id: params[:activity_id],
-      user_id: current_user.id,
-    )
-    if @activityuser.save
-      render "show.json.jb"
+    if params[:user_id] == current_user.id
+      @activityuser = ActivityUser.find_or_initialize_by(
+        activity_id: params[:activity_id],
+        user_id: current_user.id,
+      )
+      if @activityuser.save
+        render "show.json.jb"
+      else
+        render json: { errors: @activityuser.errors.full_messages }, status: 422
+      end
     else
-      render json: { errors: @activityuser.errors.full_messages }, status: 422
+      render json: { errors: ["Wrong user"] }, status: 422
     end
   end
 
@@ -34,5 +38,20 @@ class Api::ActivityUsersController < ApplicationController
     activityuser = ActivityUser.find_by(id: params[:id])
     activityuser.destroy
     render json: { message: "Destroyed." }
+  end
+
+  def set_multiple
+    # First destroy all current activity users
+    current_user.activity_users.destroy_all
+
+    # Then create each activity user
+    params[:activity_ids].each do |activity_id|
+      @activityuser = ActivityUser.new(
+        activity_id: activity_id,
+        user_id: current_user.id,
+      )
+      @activityuser.save
+    end
+    render json: { message: "ActivityUsers updated!" }
   end
 end

@@ -1,6 +1,6 @@
 class Api::ChallengesController < ApplicationController
   def index
-    @challenges = Challenge.all
+    @challenges = Challenge.all.order(:activity_id)
     render "index.json.jb"
   end
 
@@ -11,7 +11,7 @@ class Api::ChallengesController < ApplicationController
       activity_id: params[:activity_id],
       event_id: params[:event_id],
       level: params[:level],
-      amout: params[:amout],
+      amount: params[:amount],
       deadline: params[:deadline],
     )
     if @challenge.save

@@ -6,6 +6,6 @@
     height: user.height,
     weight: user.weight,
     age: user.age,
-    challenge: user.challenge,
+    challenges: user.challenges,
   }
 end

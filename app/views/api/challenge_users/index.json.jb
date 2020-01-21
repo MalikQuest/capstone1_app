@@ -1,0 +1,6 @@
+@challenges_users.map do |challenges|
+  {
+    user_id: challenges.user_id,
+    amout: challenges.amount,
+  }
+end

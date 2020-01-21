@@ -5,4 +5,6 @@
   height: @user.height,
   weight: @user.weight,
   age: @user.age,
+  activities: @user.activities,
+  challenges: @user.challenges,
 }

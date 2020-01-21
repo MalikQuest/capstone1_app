@@ -2,5 +2,7 @@
   {
     id: activity.id,
     name: activity.name,
+    description: activity.description,
+    url: activity.url,
   }
 end

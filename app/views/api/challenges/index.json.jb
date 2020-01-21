@@ -3,10 +3,14 @@
     id: challenges.id,
     description: challenges.description,
     user_id: challenges.user_id,
+    user_name: challenges.user.name,
     activity_id: challenges.activity_id,
+    activity_name: challenges.activity.name,
+    activity: challenges.activity,
     event_id: challenges.event_id,
     level: challenges.level,
     amout: challenges.amount,
     deadline: challenges.deadline,
+    num_users: challenges.users.length,
   }
 end

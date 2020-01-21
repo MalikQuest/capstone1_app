@@ -13,6 +13,11 @@ class Api::ActivitiesController < ApplicationController
     render "show.json.jb"
   end
 
+  def show
+    @activity = Activity.find_by(id: params[:id])
+    render "show.json.jb"
+  end
+
   def update
     @activity = activity.find_by([:id])
     @activity.name = params[:name] || @activity.name

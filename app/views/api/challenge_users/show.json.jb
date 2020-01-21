@@ -1,0 +1,6 @@
+{
+  id: @challengeuser.id,
+  user_id: @challengeuser.user_id,
+  amount: @challengeuser.amount,
+  challenge_id: @challengeuser.challenge_id,
+}

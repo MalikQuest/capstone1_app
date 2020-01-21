@@ -2,6 +2,12 @@
   id: @challenge.id,
   description: @challenge.description,
   user_id: @challenge.user_id,
+  user_name: @challenge.user.name,
   activity_id: @challenge.activity_id,
+  activity_name: @challenge.activity.name,
+  activity: @challenge.activity,
   event_id: @challenge.event_id,
+  level: @challenge.level,
+  amount: @challenge.amount,
+  deadline: @challenge.deadline,
 }

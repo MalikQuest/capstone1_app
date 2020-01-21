@@ -1,0 +1,10 @@
+{
+  id: @activity_id,
+  name: @activity.name,
+  users: @activity.users.map do |user|
+    {
+      id: user.id,
+      name: user.name,
+    }
+  end,
+}
